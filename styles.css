@@ -1,20 +1,20 @@
+
 body {
     font-family: Arial, sans-serif;
-    color: #3e2723; /* dark brown text */
-    background-color: #f4a460; /* desert sand color */
+    color: #3e2723;
+    background-color: #f4a460;
 
-margin: 0;
-padding: 0;
-line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
 }
 
 header {
-background-color: #4CAF50;
-color: white;
-padding: 20px;
-text-align: center;
+    background-color: #8b4513;
+    color: white;
+    padding: 20px;
+    text-align: center;
 }
-
 header h1 {
 margin: 0;
 }
