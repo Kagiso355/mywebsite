@@ -86,3 +86,11 @@ h1, h2 {
 .hero {
     height: 300px;
 }
+
+img {
+    transition: 0.3s;
+}
+
+img:hover {
+    transform: scale(1.05);
+}
