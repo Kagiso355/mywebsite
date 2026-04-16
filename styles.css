@@ -127,3 +127,6 @@ h1, h2 {
 .filter {
     display: none;
     }
+.hero-title {
+    color: #cc4e2c; /* deep terracotta */
+    }
