@@ -9,97 +9,124 @@
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body>
+<body onload="filterSelection('all')">
 
 <header>
 <nav class="navbar navbar-dark bg-dark">
   <div class="container">
 
-    <!-- Website Name -->
     <a class="navbar-brand d-flex align-items-center" href="index.html">
-    <img src="logo.jpg" alt="Logo" width="40" height="40" class="me-2">
-    Kalahari Comfort Hotel
-</a>
+      <img src="logo.jpg" width="40" height="40" class="me-2">
+      Kalahari Comfort Hotel
+    </a>
 
-    <!-- Hamburger Button -->
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <!-- Menu Links -->
     <div class="collapse navbar-collapse" id="menu">
       <ul class="navbar-nav ms-auto text-end">
         <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
         <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
         <li class="nav-item"><a class="nav-link" href="rooms.html">Rooms</a></li>
-        <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+        <li class="nav-item"><a class="nav-link active" href="gallery.html">Gallery</a></li>
         <li class="nav-item"><a class="nav-link" href="booking.html">Booking</a></li>
         <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
       </ul>
     </div>
 
   </div>
-  </nav>
+</nav>
 </header>
 
 <main class="container my-5">
 <h2 class="text-center">Gallery</h2>
 
-<main class="container my-5">
-<h2 class="text-center">Gallery</h2>
+<!-- FILTER BUTTONS -->
+<div class="text-center my-4">
+    <button class="btn btn-dark m-1" onclick="filterSelection('all')">All</button>
+    <button class="btn btn-success m-1" onclick="filterSelection('rooms')">Rooms</button>
+    <button class="btn btn-warning m-1" onclick="filterSelection('food')">Food</button>
+    <button class="btn btn-info m-1" onclick="filterSelection('pool')">Pool</button>
+</div>
 
 <div class="row g-3">
 
-    <!-- Rooms -->
-    <div class="col-md-4">
-        <img src="Single room.jpg" class="img-fluid rounded" alt="Single Room">
+    <!-- ROOMS -->
+    <div class="col-md-4 filter rooms">
+        <img src="Single room.jpg" class="img-fluid rounded">
     </div>
 
-    <div class="col-md-4">
-        <img src="Double room.jpg" class="img-fluid rounded" alt="Double Room">
+    <div class="col-md-4 filter rooms">
+        <img src="Double room.jpg" class="img-fluid rounded">
     </div>
 
-    <div class="col-md-4">
-        <img src="Luxury suite.jpg" class="img-fluid rounded" alt="Luxury Suite">
+    <div class="col-md-4 filter rooms">
+        <img src="Luxury suite.jpg" class="img-fluid rounded">
     </div>
 
-    <!-- Added Food & Hotel Areas -->
-
-    <div class="col-md-4">
-        <img src="Bar.jpeg" class="img-fluid rounded" alt="Bar Area">
+    <!-- FOOD -->
+    <div class="col-md-4 filter food">
+        <img src="Bar.jpeg" class="img-fluid rounded">
     </div>
 
-    <div class="col-md-4">
-        <img src="Chinese.jpg" class="img-fluid rounded" alt="Chinese Cuisine">
+    <div class="col-md-4 filter food">
+        <img src="Chinese.jpg" class="img-fluid rounded">
     </div>
 
-    <div class="col-md-4">
-        <img src="Diner.jpg" class="img-fluid rounded" alt="Diner Area">
+    <div class="col-md-4 filter food">
+        <img src="Diner.jpg" class="img-fluid rounded">
     </div>
 
-    <div class="col-md-4">
-        <img src="Indian.jpg" class="img-fluid rounded" alt="Indian Cuisine">
+    <div class="col-md-4 filter food">
+        <img src="Indian.jpg" class="img-fluid rounded">
     </div>
 
-    <div class="col-md-4">
-        <img src="Italian.jpg" class="img-fluid rounded" alt="Italian Cuisine">
+    <div class="col-md-4 filter food">
+        <img src="Italian.jpg" class="img-fluid rounded">
     </div>
-  <div class="col-md-4">
-    <img src="Nigerian.jpg" class="img-fluid rounded" alt="Nigerian Cuisine">
+
+    <div class="col-md-4 filter food">
+        <img src="Nigerian.jpg" class="img-fluid rounded">
+    </div>
+
+    <!-- POOL -->
+    <div class="col-md-4 filter pool">
+        <img src="Pool.jpg" class="img-fluid rounded">
+    </div>
+
 </div>
-
-<div class="col-md-4">
-    <img src="Pool.jpg" class="img-fluid rounded" alt="Swimming Pool">
-</div>
-
-</div>
-  </main>
 
 </main>
 
 <footer class="text-center bg-dark text-white p-3">
 <p>© 2026 Kalahari Comfort Hotel</p>
 </footer>
+
+<!-- BOOTSTRAP JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+
+<!-- FILTER SCRIPT -->
+<script>
+function filterSelection(category) {
+    let items = document.getElementsByClassName("filter");
+
+    for (let i = 0; i < items.length; i++) {
+        items[i].style.display = "none";
+    }
+
+    if (category === "all") {
+        for (let i = 0; i < items.length; i++) {
+            items[i].style.display = "block";
+        }
+    } else {
+        let selected = document.getElementsByClassName(category);
+        for (let i = 0; i < selected.length; i++) {
+            selected[i].style.display = "block";
+        }
+    }
+}
+</script>
+
 </body>
 </html>
